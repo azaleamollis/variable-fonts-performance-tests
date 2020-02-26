@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Font Performance Tests</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>    
+    <div class="wrapper">
+        <h1>Variable Fonts Performance Tests</h1>
+        <div class="button-wrapper">
+            <a class="button" href="1-static-fonts-google-cdn/index.html" target="_blank">Roboto Static from Google CDN (1)</a>
+            <a class="button" href="2-static-fonts-self-hosted/index.html" target="_blank">Roboto Static Self-Hosted (2)</a>
+            <a class="button" href="3-variable-fonts/index.html" target="_blank">Roboto Variable Self-Hosted (3)</a>
+        </div>
+        <h2>Test Cases</h2>
+        <ol>
+            <li>Roboto Static from Google CDN:
+                <ul>
+                    <li>Pulled from <a href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" target="_blank">Google Fonts</a> (all 12 variations, Latin character set).</li>
+                    <li>For more information, see the <a href="https://github.com/azaleamollis/variable-fonts-performance-tests/google-fonts-info/" target="_blank">Google Fonts Info</a> directory in the GitHub repo (added for educational purposes). However, note that in this test case, both <code>font.css</code> and the 12 font files are pulled from the Google CDN and they are not present on your server.</li>
+                    <li>Self-hosted files: 
+                        <ul>
+                            <li><code>index.html</code></li> 
+                            <li><code>style.css</code></li>
+                        </ul>
+                    </li>
+                    <li>Files on CDN: 
+                        <ul>
+                            <li><code>fonts.css</code></li> 
+                            <li><code>fonts/</code> directory with 12 WOFF2 files</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Roboto Static Self-Hosted:
+                <ul>
+                    <li>Custom font pack generated with <a href="https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin" target="_blank">Google Webfonts Helper</a>.</li>
+                    <li>In the CSS, I only used the WOFF2 format to make this test case similar to the two others (however, in production, you should also add the WOFF format to support all modern browsers, and both WOFF and TTF (and probably EOT) to also support older browsers).</li>
+                    <li>Self-hosted files: 
+                        <ul>
+                            <li><code>index.html</code></li> 
+                            <li><code>style.css</code></li> 
+                            <li><code>fonts.css</code></li> 
+                            <li><code>fonts/</code> directory with 12 WOFF2 files</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Roboto Variable Self-Hosted:
+                <ul>
+                    <li>Roboto Variable Font, cloned from <a href="https://github.com/TypeNetwork/Roboto" target="_blank">TypeNetwork's GitHub repo</a> and converted from TTF to WOFF2 using Google's <a href="https://github.com/google/woff2" target="_blank">woff2</a> tool.</li>
+                    <li>Self-hosted files: 
+                        <ul>
+                            <li><code>index.html</code></li> 
+                            <li><code>style.css</code></li>
+                            <li><code>fonts.css</code></li>
+                            <li><code>fonts/</code> directory with 1 WOFF2 file</li>
+                        </ul>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Test Code</h2>
+
+        <ul>
+            <li>The <code>index.html</code> file is identical in all three cases. It consists of 12 paragraphs &mdash; each displays a different variation of the Roboto font (such as Roboto Thin, Roboto Light, etc).</li>
+            <li>The <code>style.css</code> file is identical in Test Case #1 and Test Case #2.</li>
+            <li>In Test Case #3, <code>style.css</code> uses the <code>font-style: oblique 12deg;</code> rule instead of <code>font-style: italic;</code> because the Roboto Variable Font uses the slant (<code>slnt</code>) axis instead of italics (<code>ital</code>). See more in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide" target="_blank">MDN Docs</a>. Otherwise, it's identical to <code>style.css</code> in Test Case #1 and Test Case #2.</li>
+        </ul>
+
+        <h2>Recommended Test Environment</h2>
+        <ul>
+            <li>Browser: Chrome in Incognito Mode (to eliminate the impact of Chrome extensions on the page load time).</li>
+            <li>Performance testing tool: <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en" target="_blank">Lighthouse</a> running in Chrome DevTools.</li>
+            <li>Cache disabled (in DevTools).</li>
+            <li>Other performance testing tools (both web apps are powered by Lighthouse, but don't require Chrome DevTools):
+                <ul>
+                    <li><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed Insights</a></li>
+                    <li><a href="https://web.dev/" target="_blank">web.dev</a> by Google</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
