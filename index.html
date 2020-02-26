@@ -10,9 +10,10 @@
     <div class="wrapper">
         <h1>Variable Fonts Performance Tests</h1>
         <div class="button-wrapper">
-            <a class="button" href="1-static-fonts-google-cdn/index.html" target="_blank">Roboto Static from Google CDN (1)</a>
+            <a class="button" href="1-static-fonts-google-cdn/index.html" target="_blank">Roboto Static Google CDN (1)</a>
             <a class="button" href="2-static-fonts-self-hosted/index.html" target="_blank">Roboto Static Self-Hosted (2)</a>
             <a class="button" href="3-variable-fonts/index.html" target="_blank">Roboto Variable Self-Hosted (3)</a>
+            <a class="button ghost" href="additional-test-case/index.html" target="_blank">Additional Test Case</a>
         </div>
         <h2>Test Cases</h2>
         <ol>
@@ -29,7 +30,7 @@
                     <li>Files on CDN: 
                         <ul>
                             <li><code>fonts.css</code></li> 
-                            <li><code>fonts/</code> directory with 12 WOFF2 files</li>
+                            <li>12 WOFF2 files</li>
                         </ul>
                     </li>
                 </ul>
@@ -43,7 +44,7 @@
                             <li><code>index.html</code></li> 
                             <li><code>style.css</code></li> 
                             <li><code>fonts.css</code></li> 
-                            <li><code>fonts/</code> directory with 12 WOFF2 files</li>
+                            <li>12 WOFF2 files</li>
                         </ul>
                     </li>
                 </ul>
@@ -56,8 +57,25 @@
                             <li><code>index.html</code></li> 
                             <li><code>style.css</code></li>
                             <li><code>fonts.css</code></li>
-                            <li><code>fonts/</code> directory with 1 WOFF2 file</li>
+                            <li>1 WOFF2 file</li>
                         </ul>
+                </ul>
+            </li>
+            <li>Additional Test Case:
+                <ul>
+                    <li>Pulled from <a href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto:300,400,400i,700" target="_blank">Google CDN</a> (4 variations: Roboto Light, Roboto Regular, Roboto Regular Italic, Roboto Bold).</li>
+                    <li>Self-hosted files: 
+                        <ul>
+                            <li><code>index.html</code></li> 
+                            <li><code>style.css</code></li>
+                        </ul>
+                    </li>
+                    <li>Files on CDN: 
+                        <ul>
+                            <li><code>fonts.css</code></li> 
+                            <li>4 WOFF2 files</li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ol>

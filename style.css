@@ -55,6 +55,10 @@ code {
 @media (min-width: 640px) {
     .button-wrapper {
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .button-wrapper .button {
+        flex: 1 0 300px;
     }
 }
 .button {
@@ -68,4 +72,13 @@ code {
 }
 .button:hover {
     background: #126f44;
+}
+.ghost.button {
+    background: #fff;
+    color: #179159;
+    border: 1px solid #179159;
+}
+.ghost.button:hover {
+    color: #126f44;
+    border: 1px solid #126f44;
 }
