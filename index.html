@@ -73,12 +73,15 @@
         <h2>Recommended Test Environment</h2>
         <ul>
             <li>Browser: Chrome in Incognito Mode (to eliminate the impact of Chrome extensions on the page load time).</li>
-            <li>Performance testing tool: <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en" target="_blank">Lighthouse</a> running in Chrome DevTools.</li>
-            <li>Cache disabled (in DevTools).</li>
-            <li>Other performance testing tools (both web apps are powered by Lighthouse, but don't require Chrome DevTools):
+            <li>Performance testing tools used in the test:
                 <ul>
-                    <li><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed Insights</a></li>
-                    <li><a href="https://web.dev/" target="_blank">web.dev</a> by Google</li>
+                    <li><a href="https://gtmetrix.com/" target="_blank">GTMetrix</a></li>
+                    <li>Chrome DevTools with <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en" target="_blank">Lighthouse</a>
+                        <ul>
+                        <li>Performance report on an emulated desktop (run Lighthouse report in the 'Audit' tab).</li>
+                        <li>Cache disabled (feature available in the 'Network' tab).</li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ul>
