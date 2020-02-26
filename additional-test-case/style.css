@@ -1,0 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-synthesis: none;
+}
+.light {
+    font-weight: 300;
+}
+.regular {
+    font-weight: 400;
+}
+.bold {
+    font-weight: 700;
+}
+.italic {
+    font-style: italic;
+}
